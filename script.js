@@ -1,128 +1,56 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto - Igualdade de Gênero</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- pagina 1 -->
-    <!-- parte rosa com degrade na parte de cima -->
-     
-    <div>
-        <img src="IMG/Simbolo de igualde.png" alt="Símbolo de Igualdade">
-        <h1>Igualdade de gênero & inclusão </h1>
-        <img src="IMG/imgonu.png" alt="ONU Mulheres">
-    </div>
+// --- MARCO M4: Destaque do menu de navegação ao rolar a página ---
+const navLinks = document.querySelectorAll('body > div:nth-of-type(even) a');
+const sections = document.querySelectorAll('section[id]');
 
-    <!-- menu de navegação -->
-    <div>
-        <a href="#importancia">Importância</a>
-        <a href="#indicadores">Indicadores</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#historias">Histórias</a>
-        <a href="#direitos">Direitos garantidos</a>
-    </div>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+    });
+}, { rootMargin: '-45% 0px -50% 0px' });
 
-    <!-- texto 1 -->
-    <section id="importancia">
-        <h1>O que é a ODS 5?</h1>
-        <p>A Igualdade de Gênero não é apenas um direito humano fundamental, mas a base necessária para a construção de um mundo pacífico, próspero e sustentável.
-        A ODS 5 faz parte dos 17 Objetivos de Desenvolvimento Sustentável criados pela ONU para acabar com as discriminações contra mulheres e meninas em todo o mundo, garantindo direitos iguais na educação, na saúde, no mercado de trabalho e nas decisões políticas.</p>
-        <img src="IMG/img10.jpeg" alt="Malala Yousafzai">
-    </section>
+sections.forEach((section) => observer.observe(section));
 
-    <!-- página 2 -->
 
-    <!-- grafico 1 -->
-    <section id="indicadores">
-        <h2>Indicadores</h2>
-        <p>Autonomia na tomada de decisões</p>
-        <img src="IMG/garf1.jpeg" alt="Gráfico de autonomia na tomada de decisões">
-        <p>37% dos assentos nas câmaras baixas dos parlamentos nacionais dos países da região são ocupados por mulheres.</p>
+// --- MARCO M5: Gestão de Dados com Arrays e Manipulação do DOM ---
 
-        <!-- grafico 2 -->
-        <p>Diferença salarial entre homens e mulheres </p>
-        <img src="IMG/graf2.jpeg" alt="Gráfico da diferença salarial">
-        <p>Em média, as mulheres no Brasil recebem cerca de 78% a 80% do salário dos homens, mesmo exercendo funções equivalentes e tendo, em média, maior nível de escolaridade.</p>
+// 1. Definição do Array de dados (Direitos Garantidos)
+const listaDireitosData = [
+    "Direito ao voto feminino.",
+    "Direito das mulheres à educação.",
+    "Direito de trabalhar e exercer uma profissão.",
+    "Direito de receber salário pelo próprio trabalho.",
+    "Direito à igualdade perante a lei.",
+    "Direito de participar da política e ocupar cargos públicos.",
+    "Direito à propriedade e à administração de seus próprios bens.",
+    "Direito ao divórcio.",
+    "Direito à proteção contra violência doméstica.",
+    "Direito à licença-maternidade e à proteção no trabalho durante a gravidez.",
+    "Direito de frequentar universidades e instituições de ensino.",
+    "Direito de denunciar e combater o assédio sexual."
+];
 
-        <!-- grafico 3 -->
-        <p>Autonomia </p>
-        <img src="IMG/graf3.jpeg" alt="Gráfico de autonomia financeira">
-        <p>23% das mulheres da região não têm renda própria, em comparação com 10% dos homens nessa condição</p>
+// 2. Seleção do elemento pai no DOM
+const ulDireitos = document.getElementById('lista-direitos');
 
-        <!-- grafico 4 -->
-        <p>Violência </p>
-        <img src="IMG/graf4.jpeg" alt="Gráfico sobre violência">
-        <p>Cerca de 54% das mulheres declaram já ter sofrido algum tipo de violência (física, psicológica, moral, sexual ou patrimonial).</p>
-    </section>
+// 3. Renderização dinâmica da lista usando o método forEach()
+if (ulDireitos) {
+    listaDireitosData.forEach((direito) => {
+        const li = document.createElement('li');
+        li.textContent = direito;
+        ulDireitos.appendChild(li);
+    });
+}
 
-    <!-- página 3 -->
 
-    <section id="depoimentos">
-        <h1>Depoimentos </h1>
+// --- INTERATIVIDADE: Ação de clique para destacar as imagens ---
+const imagensInterativas = document.querySelectorAll('.img-interativa');
 
-        <!-- malala -->
-        <img src="IMG/imgmalala.jpeg" alt="Malala Yousafzai" class="img-interativa">
-        <h2>Malala Yousafzai </h2>
-        <p>Malala relata sua experiência no Paquistão, onde meninas foram impedidas de frequentar a escola por serem mulheres. Em discurso na ONU, ela afirmou: “Não podemos todos ter sucesso quando metade de nós é impedida de avançar.” A frase mostra como a desigualdade de gênero não afeta apenas as mulheres, mas limita o desenvolvimento de toda a sociedade. </p>
-
-        <!-- emma -->
-        <img src="IMG/img7.jpeg" alt="Emma Watson" class="img-interativa">
-        <h2>Emma Watson</h2>
-        <p>Em seu discurso na ONU, ela destacou que “nenhum país do mundo pode dizer que alcançou a igualdade entre os sexos”, chamando atenção para diferenças salariais, participação política e respeito social. </p>
-
-        <!-- chimamanda -->
-        <img src="IMG/img6.jpeg" alt="Chimamanda Ngozi Adichie" class="img-interativa">
-        <h2>Chimamanda Ngozi Adichie</h2>
-        <p>A escritora nigeriana Chimamanda Adichie, em sua palestra We Should All Be Feminists, aborda como meninas são ensinadas a controlar suas ambições para não “ameaçar” os homens. Ela argumenta que a sociedade estabelece padrões diferentes para homens e mulheres, fazendo com que mulheres sejam pressionadas a diminuir suas próprias conquistas. </p>
-    </section>
-
-    <!-- página 4 -->
-
-    <section id="historias">
-        <h1>Mulheres Históricas</h1>
-
-        <!-- frida -->
-        <img src="IMG/imgfrida.jpeg" alt="Frida Kahlo" class="img-interativa">
-        <h2>Frida Kahlo</h2>
-        <p>Lutou pela liberdade de expressão das mulheres através da arte.</p>
-
-        <!-- marie -->
-        <img src="IMG/imgmarie.jpeg" alt="Marie Curie" class="img-interativa">
-        <h2>Marie Curie</h2>
-        <p>Foi uma cientista importante para o estudo da radioatividade</p>
-
-        <!-- dandara -->
-        <img src="IMG/imgpalmares.jpeg" alt="Dandara dos Palmares" class="img-interativa">
-        <h2>Dandara dos Palmares</h2>
-        <p>Lutou contra a escravidão e pela liberdade dos negros.</p>
-
-        <!-- Ada Lovelace -->
-        <img src="IMG/imgada.jpeg" alt="Ada Lovelace" class="img-interativa">
-        <h2>Ada Lovelace</h2>
-        <p>Foi uma das primeiras mulheres a trabalhar com programação.</p>
-
-        <!-- rosa -->
-        <img src="IMG/img1.jpeg" alt="Rosa Parks" class="img-interativa">
-        <h2>Rosa Parks</h2>
-        <p>Lutou contra o racismo e a segregação nos Estados Unidos.</p>
-    </section>
-
-    <!-- página 5 -->
-
-    <section id="direitos">
-        <h1>Direitos Garantidos </h1>
-        <!-- lista ligada a Array e DOM no script.js -->
-        <ul id="lista-direitos"></ul>
-        <img src="IMG/imgprotesto.jpeg" alt="Ilustração de protesto">
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
+imagensInterativas.forEach((img) => {
+    img.addEventListener('click', () => {
+        // Alterna a classe visual de destaque no elemento clicado
+        img.classList.toggle('destaque-imagem');
+    });
+});
