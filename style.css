@@ -340,6 +340,21 @@ section > h2:first-child {
     font-size: 1.1em;
 }
 
+/* Interatividade nas Imagens */
+.img-interativa {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-interativa:hover {
+    transform: scale(1.05);
+}
+
+.destaque-imagem {
+    transform: scale(1.15) !important;
+    box-shadow: 0 0 22px var(--pink-700) !important;
+}
+
 /* responsivo */
 @media (max-width: 900px) {
     :root {
