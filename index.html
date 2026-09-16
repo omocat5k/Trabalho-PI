@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto - Igualdade de Gênero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho Fixo -->
+    <div>
+        <img src="IMG/Simbolo de igualde.png" alt="Símbolo de Igualdade">
+        <h1>Igualdade de gênero & inclusão</h1>
+        <img src="IMG/imgonu.png" alt="ONU Mulheres">
+    </div>
+
+    <!-- Menu de Navegação -->
+    <div>
+        <a href="#importancia">Importância</a>
+        <a href="#indicadores">Indicadores</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#historias">Histórias</a>
+        <a href="#direitos">Direitos garantidos</a>
+    </div>
+
+    <!-- Seção Importância -->
+    <section id="importancia">
+        <h1>O que é a ODS 5?</h1>
+        <p>A Igualdade de Gênero não é apenas um direito humano fundamental, mas a base necessária para a construção de um mundo pacífico, próspero e sustentável.
+        A ODS 5 faz parte dos 17 Objetivos de Desenvolvimento Sustentável criados pela ONU para acabar com as discriminações contra mulheres e meninas em todo o mundo, garantindo direitos iguais na educação, na saúde, no mercado de trabalho e nas decisões políticas.</p>
+        <img src="IMG/img10.jpeg" alt="Malala Yousafzai">
+    </section>
+
+    <!-- Seção Indicadores -->
+    <section id="indicadores">
+        <h2>Indicadores</h2>
+        <p>Autonomia na tomada de decisões</p>
+        <img src="IMG/garf1.jpeg" alt="Gráfico de autonomia na tomada de decisões">
+        <p>37% dos assentos nas câmaras baixas dos parlamentos nacionais dos países da região são ocupados por mulheres.</p>
+
+        <p>Diferença salarial entre homens e mulheres</p>
+        <img src="IMG/graf2.jpeg" alt="Gráfico da diferença salarial">
+        <p>Em média, as mulheres no Brasil recebem cerca de 78% a 80% do salário dos homens, mesmo exercendo funções equivalentes e tendo, em média, maior nível de escolaridade.</p>
+
+        <p>Autonomia</p>
+        <img src="IMG/graf3.jpeg" alt="Gráfico de autonomia financeira">
+        <p>23% das mulheres da região não têm renda própria, em comparação com 10% dos homens nessa condição</p>
+
+        <p>Violência</p>
+        <img src="IMG/graf4.jpeg" alt="Gráfico sobre violência">
+        <p>Cerca de 54% das mulheres declaram já ter sofrido algum tipo de violência (física, psicológica, moral, sexual ou patrimonial).</p>
+    </section>
+
+    <!-- NOVO: Simulador de Impacto (Uso do Objeto Math) -->
+    <section id="simulador">
+        <h1>Simulador de Impacto Socioeconômico</h1>
+        <p style="text-align: center; color: var(--ink-soft); max-width: 700px; margin: 0 auto 1.5rem;">
+            Calcule o impacto financeiro acumulado gerado pela disparidade salarial e projete estimativas de igualdade usando algoritmos com o Objeto <code>Math</code> do JavaScript.
+        </p>
+        
+        <div class="simulador-card">
+            <div class="form-group">
+                <label for="salarioHomem">Salário Médio do Homem (R$):</label>
+                <input type="number" id="salarioHomem" value="4000" min="0" step="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="salarioMulher">Salário Médio da Mulher (R$):</label>
+                <input type="number" id="salarioMulher" value="3120" min="0" step="100">
+            </div>
+
+            <div class="form-group">
+                <label for="taxaEvolucao">Taxa de Evolução Anual de Redução da Desigualdade (%):</label>
+                <input type="number" id="taxaEvolucao" value="1.5" min="0.1" max="10" step="0.1">
+            </div>
+
+            <button class="btn-calcular" id="btnCalcular">Calcular Impacto com Objeto Math</button>
+
+            <div class="simulador-resultado" id="resultadoSimulador">
+                Clique no botão acima para processar os dados matemáticos.
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section id="depoimentos">
+        <h1>Depoimentos</h1>
+
+        <img src="IMG/imgmalala.jpeg" alt="Malala Yousafzai" class="img-interativa">
+        <h2>Malala Yousafzai</h2>
+        <p>Malala relata sua experiência no Paquistão, onde meninas foram impedidas de frequentar a escola por serem mulheres. Em discurso na ONU, ela afirmou: “Não podemos todos ter sucesso quando metade de nós é impedida de avançar.” A frase mostra como a desigualdade de gênero não afeta apenas as mulheres, mas limita o desenvolvimento de toda a sociedade.</p>
+
+        <img src="IMG/img7.jpeg" alt="Emma Watson" class="img-interativa">
+        <h2>Emma Watson</h2>
+        <p>Em seu discurso na ONU, ela destacou que “nenhum país do mundo pode dizer que alcançou a igualdade entre os sexos”, chamando atenção para diferenças salariais, participação política e respeito social.</p>
+
+        <img src="IMG/img6.jpeg" alt="Chimamanda Ngozi Adichie" class="img-interativa">
+        <h2>Chimamanda Ngozi Adichie</h2>
+        <p>A escritora nigeriana Chimamanda Adichie, em sua palestra We Should All Be Feminists, aborda como meninas são ensinadas a controlar suas ambições para não “ameaçar” os homens. Ela argumenta que a sociedade estabelece padrões diferentes para homens e mulheres, fazendo com que mulheres sejam pressionadas a diminuir suas próprias conquistas.</p>
+    </section>
+
+    <!-- Seção Histórias (Com Filtros Dinâmicos) -->
+    <section id="historias">
+        <h1>Mulheres Históricas</h1>
+
+        <!-- Controles de Filtros Dinâmicos -->
+        <div class="filtros-container">
+            <input type="text" id="filtroTexto" placeholder="Pesquisar por nome ou história...">
+            <select id="filtroCategoria">
+                <option value="todos">Todas as Áreas</option>
+                <option value="arte">Arte & Cultura</option>
+                <option value="ciencia">Ciência & Tecnologia</option>
+                <option value="direitos">Direitos Humanos & Ativismo</option>
+            </select>
+        </div>
+
+        <!-- Grid dinâmico populado via JS -->
+        <div class="historias-grid" id="gridHistorias"></div>
+    </section>
+
+    <!-- Seção Direitos Garantidos -->
+    <section id="direitos">
+        <h1>Direitos Garantidos</h1>
+        <ul id="lista-direitos"></ul>
+        <img src="IMG/imgprotesto.jpeg" alt="Ilustração de protesto">
+    </section>
+
+    <!-- Conexão com o script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
