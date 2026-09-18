@@ -83,9 +83,9 @@ if (btnCalcular) {
         const perdaAcumuladaArred = Math.round(perdaAcumulada30Anos);
 
         resultadoSimulador.innerHTML = `
-            <p><strong>Diferença Salarial Mensal Absoluta (Math.abs):</strong> R$ ${diferencaMensalArred.toLocaleString('pt-BR')}</p>
-            <p><strong>Perda de Carreira Acumulada em 30 Anos com Juros Compostos (Math.pow):</strong> ~ R$ ${perdaAcumuladaArred.toLocaleString('pt-BR')}</p>
-            <p><strong>Estimativa para Alcançar a Paridade Salarial (Math.log & Math.ceil):</strong> ${anosParaIgualdade > 0 ? `<strong>${anosParaIgualdade} anos</strong> (mantendo a taxa de +${taxaEvolucao}% a.a.)` : 'Paridade alcançada ou parâmetros inválidos.'}</p>
+            <p><strong>Diferença Salarial Mensal Absoluta :</strong> R$ ${diferencaMensalArred.toLocaleString('pt-BR')}</p>
+            <p><strong>Perda de Carreira Acumulada em 30 Anos com Juros Compostos :</strong> ~ R$ ${perdaAcumuladaArred.toLocaleString('pt-BR')}</p>
+            <p><strong>Estimativa para Alcançar a Paridade Salarial :</strong> ${anosParaIgualdade > 0 ? `<strong>${anosParaIgualdade} anos</strong> (mantendo a taxa de +${taxaEvolucao}% a.a.)` : 'Paridade alcançada ou parâmetros inválidos.'}</p>
         `;
     });
 }
